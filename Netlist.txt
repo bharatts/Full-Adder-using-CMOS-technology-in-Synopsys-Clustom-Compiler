@@ -1,0 +1,91 @@
+*  Generated for: PrimeSim
+*  Design library name: cmos_fulladder
+*  Design cell name: cmos_full_adder_tb
+*  Design view name: schematic
+.lib 'saed32nm.lib' TT
+
+*Custom Compiler Version S-2021.09
+*Tue Mar  1 06:39:55 2022
+
+.global gnd!
+********************************************************************************
+* Library          : cmos_fulladder
+* Cell             : cmos_full_adder
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+.subckt cmos_full_adder a b c carry_out vdd vss sum_out
+xm29 sum_out net82 vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm19 net82 net81 net31 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm18 net75 c net82 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm17 net71 b net75 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm16 net31 a net71 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm8 net31 c vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm7 net31 b vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm6 net31 a vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm5 carry_out net81 vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm4 net18 c net81 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm3 vdd a net18 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm2 net81 b net9 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm1 net9 a net18 vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm0 net18 a vdd vdd p105 w=0.1u l=0.03u nf=1 m=1
+xm30 sum_out net82 vss vss n105 w=0.1u l=0.03u nf=1 m=1
+xm26 vss c net107 vss n105 w=0.1u l=0.03u nf=1 m=1
+xm25 net107 b net103 vss n105 w=0.1u l=0.03u nf=1 m=1
+xm24 net103 a net82 vss n105 w=0.1u l=0.03u nf=1 m=1
+xm23 net124 c vss vss n105 w=0.1u l=0.03u nf=1 m=1
+xm22 net124 a vss vss n105 w=0.1u l=0.03u nf=1 m=1
+xm21 net124 b vss vss n105 w=0.1u l=0.03u nf=1 m=1
+xm20 net82 net81 net124 vss n105 w=0.1u l=0.03u nf=1 m=1
+xm14 carry_out net81 vss vss n105 w=0.1u l=0.03u nf=1 m=1
+xm13 net56 a net81 vss n105 w=0.1u l=0.03u nf=1 m=1
+xm12 vss b net56 vss n105 w=0.1u l=0.03u nf=1 m=1
+xm11 net41 b vss vss n105 w=0.1u l=0.03u nf=1 m=1
+xm10 net41 a vss vss n105 w=0.1u l=0.03u nf=1 m=1
+xm9 net81 c net41 vss n105 w=0.1u l=0.03u nf=1 m=1
+.ends cmos_full_adder
+
+********************************************************************************
+* Library          : cmos_fulladder
+* Cell             : cmos_full_adder_tb
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+xi0 a b c carry_out net10 gnd! sum_out cmos_full_adder
+v2 net10 gnd! dc=1.8
+v5 b gnd! dc=0 pulse ( 0 1.2 0 0.1u 0.1u 4u 8u )
+v4 c gnd! dc=0 pulse ( 0 1.2 0 0.1u 0.1u 6u 12u )
+v3 a gnd! dc=0 pulse ( 0 1.2 0 0.1u 0.1u 5u 10u )
+c15 carry_out gnd! c=1p
+c14 sum_out gnd! c=1p
+
+
+
+
+
+
+
+
+.tran '1u' '20u' name=tran
+
+.option primesim_remove_probe_prefix = 0
+.probe v(*) i(*) level=1
+.probe tran v(a) v(b) v(c) v(carry_out) v(sum_out)
+
+.temp 25
+
+
+
+.option primesim_output=wdf
+
+
+.option parhier = LOCAL
+
+
+
+
+
+
+.end
