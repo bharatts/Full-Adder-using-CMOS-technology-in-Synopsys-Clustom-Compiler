@@ -1,12 +1,12 @@
-# Implementation of XNOR Using 6 MOS Transistors and 28nm CMOS Technology
-XNOR gate (One Bit Equality Comparator) is designed using 28nm CMOS technology by using Synopsys Custom Compiler
+# Implementation of Full Adder Using 28nm CMOS Technology
+Full Adder (One Bit) is designed using 28nm CMOS technology by using Synopsys Custom Compiler
 
 
 # Table of Content 
 - ABSTRACT 
 - INTRODUCTION
 - TOOLS USED
-- XNOR CIRCUIT DESIGN
+- FULL ADDER USING CMOS CIRCUIT DESIGN
 - NETLIST
 - ACKNOWLEDGEMENT 
 - REFERENCE 
@@ -14,15 +14,25 @@ XNOR gate (One Bit Equality Comparator) is designed using 28nm CMOS technology b
 
 ## ABSTRACT
 
-XNOR is a Hybrid gate which has OR, AND and NOT operation done to the inputs. XNOR gate is also called as equivalance gate because of the operation gives logic high when inputs are same and logic low when inputs are opposite. This is also the reason why XNOR is used as one bit equality comparator. XNOR is used for various applications like Pseudo Random number generator, Equality comparator, Correlation and sequence detection etc. Here a XNOR is designed using 28nm CMOS technology by using Synopsys Custom Compiler.
+The one-bit full adder circuit is one of the most widely used building blocks in all digital system and digital signal processing architectures. In the following we will examine the circuit structure and the realization of the full adder using the conventional CMOS design style.
 
 # INTRODUCTION
 
-In the Figure below, we have achieved XNOR operation only by using 3 NMOS and 3 PMOS transistors. The circuit consists of 2 CMOS inverters and 2 MOS pass gate configuration. By clever logic hack we have achieved XNOR logic using less number of transistors.
+A Full adder is a combinational circuit that forms the arithmetic sum of three input of one bit. It have three inputs and one output. Two of the variable is denoted by A,B and Cin represent the two significant position. The twp outputs are denoted by symbol S for sum and C for carry out. The truth table of the full adder is
 
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/xnor.png)
+![image](https://github.com/bharatts/Full-Adder-using-CMOS-technology-in-Synopsys-Clustom-Compiler/blob/main/images/Truth%20Table%20of%20Full%20Adder.jpg)
 
-When both the inputs given are same, we get logic high as output indicating us that both the inputs are of same logic. When both inputs are of different logics, we get a logic low.
+The sum and carry out of the signals of the full adder are defined as the following of two Boolean functions of the three input variables A,B and C.
+
+![image](https://github.com/bharatts/Full-Adder-using-CMOS-technology-in-Synopsys-Clustom-Compiler/blob/main/images/CMOS_Full_Adder_Boolean_equation.jpg)
+
+Gate-level schematic of the one bit full-adder circuit is shown below
+
+![image](https://github.com/bharatts/Full-Adder-using-CMOS-technology-in-Synopsys-Clustom-Compiler/blob/main/images/FullAdder.jpg)
+
+The transistor-level desing of the CMOS full-adder ciruit is shown below It noted that the circuit contains a total of 14 NMOS and 14 PMOS transistors, with the two CMOS inverters which are used to generate the outputs.
+
+![image](https://github.com/bharatts/Full-Adder-using-CMOS-technology-in-Synopsys-Clustom-Compiler/blob/main/images/transistor%20level%20diagram%20full%20adder.jpg)
 
 # TOOL USED
 
@@ -32,36 +42,36 @@ When both the inputs given are same, we get logic high as output indicating us t
 
 - Synopsys 28nm PDK:  The Synopsys 28nm Process Design Kit(PDK) was used in creation and simulation of the above designed circuit.
 
-# XNOR CIRCUIT DESIGN
+# Full Adder Using CMOS CIRCUIT DESIGN
 
-The CMOS design for XNOR is shown in fig. 
-
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/circuit.png)
+The CMOS design for Full Adder schematic is shown in fig. 
 
 - SCHEMATIC
 
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/schematic.png)
+![image](https://github.com/bharatts/Full-Adder-using-CMOS-technology-in-Synopsys-Clustom-Compiler/blob/main/images/CMOS_Full_Adder_Schematic.jpg)
 
-                                                                                                                                                                                                                                                                                                                                                                            
 - SYMBOL
 
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/symbol.png)                                                                                                                                                                                                                                                                                                                                                                               
+![image](https://github.com/bharatts/Full-Adder-using-CMOS-technology-in-Synopsys-Clustom-Compiler/blob/main/images/CMOS_Full_Adder_Symbol.jpg)
 
-- TESTBENCH SYMBOL
+                                                                                                                                                                                
+ - Testbench Symbol                                                                                                                                                                           
 
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/sim_schem.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
+![image](https://github.com/bharatts/Full-Adder-using-CMOS-technology-in-Synopsys-Clustom-Compiler/blob/main/images/CMOS_Full_Adder_Schematic_Testbench.jpg)                                                                                                                                                                                                                                                                                                                                                                               
 - PRIMEWAVE WINDOW
 
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/testsuit_pathway.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-- TESTBENCH WAVEFORM
 
-![image](https://github.com/rahul-hebbar/XNOR_gate_using_synopsys/blob/main/images/waveform.png)                                            
+![image](https://github.com/bharatts/Full-Adder-using-CMOS-technology-in-Synopsys-Clustom-Compiler/blob/main/images/CMOS_Full_Adder_Schematic_Testsuite.jpg)                                                                                                                                                                                                                                                                                                                                                                                          - TESTBENCH WAVEFORM                                                                                     
+
+
+![image](https://github.com/bharatts/Full-Adder-using-CMOS-technology-in-Synopsys-Clustom-Compiler/blob/main/images/CMOS_Full_Adder_Schematic_Waveform2.jpg)                                                                                                                                                                                                                                                                                                                                                                                                    
 
 # NETLIST
-The netlist of the above circuit has also been uploaded to the github repo with the file name - netlist.txt  
+The netlist of the above circuit has also been uploaded to the github repo with the file name - Netlist.txt 
 
 # AUTHOR
-P R RAHUL HEBBAR, MTech VLSI and Embedded Systems , Defence Institute of Advanced Technology, Pune, Maharashtra
+Bharat Suthar, MTech VLSI and Embedded Systems , Defence Institute of Advanced Technology, Pune, Maharashtra
 
 # ACKNOWLEDGEMENT 
 
@@ -75,7 +85,6 @@ P R RAHUL HEBBAR, MTech VLSI and Embedded Systems , Defence Institute of Advance
 
 # REFERENCES
 
-- Cristiano Calligaro,(2008) Design of a rad-hard library of digital cells
-for space applications.
-- Fig 1. Courtesy of electronics-tutorial.net, https://www.electronics-tutorial.net/digital-logic-gates/xnor-gate/
-
+- CMOS Digital Integrated Circuit Analysis and Design Sung-Mo Kang and Yusuf Leblebici
+- J. M. Rabaey, A. Chandrakasan, B. Nikolic, “Digital Integrated Circuits A Design Perspective”, 2nd Prentice Hall, Englewood Cliffs, NJ, 2002-  Design and Implementation of 15-   4 compressor Using 1 – bit Semi Domino Full Adder at 28nm Technology, G.RAJU, S.Aruna, G.Ranjith Kumar, S.Vasu Krishna
+- Implementation of Carry Select Adder Using CMOS Full Adder, SmitsShree.Mohapatra, R. VaibhavKumar
